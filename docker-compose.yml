@@ -1,0 +1,8 @@
+applicationservice:
+  image: lendoab:application-service
+  ports:
+    - "8081:8081"
+jobervice:
+  image: lendoab:job-service
+  ports:
+    - "8082:8082"
