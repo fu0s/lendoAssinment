@@ -6,5 +6,5 @@ import org.springframework.http.ResponseEntity;
 
 public interface ApplicationService {
 
-    ResponseEntity<ApplicationResponseModel> createApplication(ApplicationModel application);
+    ApplicationResponseModel createApplication(ApplicationModel application);
 }

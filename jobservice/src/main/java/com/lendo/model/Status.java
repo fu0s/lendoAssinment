@@ -7,7 +7,9 @@ public enum Status {
     @JsonProperty("completed")
     COMPLETED("completed"),
     @JsonProperty("rejected")
-    REJECTED("rejected");
+    REJECTED("rejected"),
+    @JsonProperty("pending")
+    PENDING("pending");
 
     private String status;
 

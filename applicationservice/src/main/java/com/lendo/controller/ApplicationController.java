@@ -17,7 +17,7 @@ public class ApplicationController {
     private ApplicationService applicationService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity createApplication(ApplicationModel application){
+    public ApplicationResponseModel createApplication(ApplicationModel application){
         return applicationService.createApplication(application);
     }
 }

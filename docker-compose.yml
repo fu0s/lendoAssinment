@@ -1,8 +1,34 @@
-applicationservice:
-  image: lendoab:application-service
-  ports:
-    - "8081:8081"
-jobervice:
-  image: lendoab:job-service
-  ports:
-    - "8082:8082"
+services:
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ApplicationsDB
+    volumes:
+      - "./init.sql:/docker-entrypoint-initdb.d/1_init.sql"
+      - "./procedure.sql:/docker-entrypoint-initdb.d/2_procedure.sql"
+      - "./lib_mysqludf_sys_64.so:/usr/lib/mysql/plugin/lib_mysqludf_sys_64.so"
+      - "./add_plugin.sql:/docker-entrypoint-initdb.d/3_add_plugin.sql"
+    ports:
+      - "127.0.0.1:3306:3306"
+    command:
+      - bash
+      - -c
+      - |
+        apt-get update
+        echo "installing curl"
+        apt-get --assume-yes install curl
+        while true; do sleep 1000; done
+  applicationservice:
+    image: lendoab:application-service
+    ports:
+      - "8081:8081"
+  jobervice:
+    image: lendoab:job-service
+    ports:
+      - "8082:8082"
+  interviewservice:
+    image:  lendoab/interview-service:stable
+    ports:
+    - "8000:8000"
