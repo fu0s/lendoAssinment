@@ -2,6 +2,9 @@ package com.lendo.DAO.entity;
 
 import javax.persistence.*;
 
+/**
+ * application id , status and job id to be stored in DB
+ */
 @Entity
 @Table(name = "APPLICATIONUPDATE")
 public class ApplicationUpdateEntity {

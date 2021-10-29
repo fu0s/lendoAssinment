@@ -6,12 +6,21 @@ import java.util.UUID;
 
 public class ApplicationStatusModel {
 
+    /**
+     * job id
+     */
     @JsonProperty("id")
     private UUID id;
 
+    /**
+     * applicaiton id
+     */
     @JsonProperty("application_id")
     private UUID application_id;
 
+    /**
+     * applicaiton status
+     */
     @JsonProperty("status")
     private Status status;
 

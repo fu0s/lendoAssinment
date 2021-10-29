@@ -16,6 +16,11 @@ public class ApplicationController {
     @Autowired
     private ApplicationService applicationService;
 
+    /**
+     * rest controller for creating application
+     * @param application first name and last name of applicant
+     * @return interview service response body
+     */
     @RequestMapping(method = RequestMethod.POST)
     public ApplicationResponseModel createApplication(ApplicationModel application){
         return applicationService.createApplication(application);

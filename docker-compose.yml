@@ -19,7 +19,7 @@ services:
         apt-get update
         echo "installing curl"
         apt-get --assume-yes install curl
-        while true; do sleep 1000; done
+        ./entrypoint.sh mysqld
   applicationservice:
     image: lendoab:application-service
     ports:

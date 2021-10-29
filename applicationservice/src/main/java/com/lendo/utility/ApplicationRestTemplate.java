@@ -8,12 +8,18 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * coustomised restetmplate
+ */
 public final class ApplicationRestTemplate {
 
     public String createApplicationUrl ;
     public RestTemplateBuilder restTemplateBuilder;
     public RestTemplate restTemplate ;
 
+    /**
+     * customised rest template constructor
+     */
     public ApplicationRestTemplate() {
         createApplicationUrl = "http://localhost:8000/api/applications";
         restTemplateBuilder = new RestTemplateBuilder();
@@ -21,6 +27,11 @@ public final class ApplicationRestTemplate {
         restTemplate = new RestTemplate();
     }
 
+    /**
+     * customised POST rest service
+     * @param application
+     * @return
+     */
     public ResponseEntity post(ApplicationModel application){
        HttpEntity<ApplicationModel> request = new HttpEntity<>(application);
        ResponseEntity response = restTemplate.exchange(createApplicationUrl, HttpMethod.POST, request, ApplicationResponseModel.class);

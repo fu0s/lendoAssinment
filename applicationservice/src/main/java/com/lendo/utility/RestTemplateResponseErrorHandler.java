@@ -16,6 +16,9 @@ import java.io.IOException;
 import static org.springframework.http.HttpStatus.Series.CLIENT_ERROR;
 import static org.springframework.http.HttpStatus.Series.SERVER_ERROR;
 
+/**
+ * class that handles interview service errors
+ */
 @ControllerAdvice
 public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
 

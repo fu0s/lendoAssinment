@@ -1,3 +1,4 @@
+##job application properties file woth server port definition and DB configuration
 spring:
   jpa:
     hibernate:

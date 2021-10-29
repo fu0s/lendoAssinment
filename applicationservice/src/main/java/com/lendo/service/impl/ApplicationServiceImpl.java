@@ -13,9 +13,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
 
+
     @Autowired
     ApplicationDAO applicationDAO;
 
+    /**
+     * create application using interview service and stores application id in DB
+     * @param application name,lastname of applicant and the application id
+     * @return interview service body
+     */
     @Override
     public ApplicationResponseModel createApplication(ApplicationModel application) {
         ApplicationRestTemplate query = new ApplicationRestTemplate();
@@ -28,4 +34,6 @@ public class ApplicationServiceImpl implements ApplicationService {
         }
         return response;
     }
+
+
 }

@@ -2,6 +2,9 @@ package com.lendo.DAO.entity;
 
 import javax.persistence.*;
 
+/**
+ * application id stored in DB
+ */
 @Entity
 @Table(name = "APPLICATION")
 public class ApplicationEntity {

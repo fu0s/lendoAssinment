@@ -16,8 +16,13 @@ public class JobController {
     @Autowired
     private JobService jobService;
 
+    /**
+     * get application status fron interview service
+     * @param application_id application id
+     * @return applicaition status
+     */
     @RequestMapping(method = RequestMethod.GET)
-    public ApplicationStatusModel createApplication(String application_id){
+    public ApplicationStatusModel getApplicationStatus(String application_id){
         return jobService.getStatus(application_id);
     }
 }

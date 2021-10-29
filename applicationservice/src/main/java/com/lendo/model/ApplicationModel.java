@@ -3,12 +3,24 @@ package com.lendo.model;
 import java.io.Serializable;
 import java.util.UUID;
 
+/**
+ * applicant DOM
+ */
 public class ApplicationModel implements Serializable {
 
+    /**
+     * applicantion id generated randomly with UUID format
+     */
     private String id;
 
+    /**
+     * applicant first name
+     */
     private String first_name;
 
+    /**
+     * applicant last name
+     */
     private String last_name;
 
     public ApplicationModel( String first_name, String last_name) {

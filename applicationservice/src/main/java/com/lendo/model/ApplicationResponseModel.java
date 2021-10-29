@@ -3,6 +3,9 @@ package com.lendo.model;
 import java.io.Serializable;
 import java.util.UUID;
 
+/**
+ * interview service response DOM
+ */
 public class ApplicationResponseModel implements Serializable {
 
     private UUID id;
