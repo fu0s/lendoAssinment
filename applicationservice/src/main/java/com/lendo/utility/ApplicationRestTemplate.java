@@ -21,7 +21,7 @@ public final class ApplicationRestTemplate {
      * customised rest template constructor
      */
     public ApplicationRestTemplate() {
-        createApplicationUrl = "http://localhost:8000/api/applications";
+        createApplicationUrl = "http://host.docker.internal:8000/api/applications";
         restTemplateBuilder = new RestTemplateBuilder();
         restTemplate = restTemplateBuilder.errorHandler(new RestTemplateResponseErrorHandler()).build();
         restTemplate = new RestTemplate();

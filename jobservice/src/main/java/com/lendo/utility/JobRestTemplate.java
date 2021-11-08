@@ -26,7 +26,7 @@ public class JobRestTemplate {
      * customised rest template constructor
      */
     public JobRestTemplate() {
-        createJobUrl = "http://localhost:8000/api/jobs?application_id={application_id}";
+        createJobUrl = "http://host.docker.internal:8000/api/jobs?application_id={application_id}";
         restTemplateBuilder = new RestTemplateBuilder();
         restTemplate = restTemplateBuilder.errorHandler(new RestTemplateResponseErrorHandler()).build();
         restTemplate = new RestTemplate();

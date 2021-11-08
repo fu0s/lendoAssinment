@@ -1,7 +1,11 @@
+networks:
+  mynetwork:
+    driver: bridge
 services:
-
   db:
     image: mysql
+    networks:
+      - mynetwork
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ApplicationsDB
@@ -11,7 +15,7 @@ services:
       - "./lib_mysqludf_sys_64.so:/usr/lib/mysql/plugin/lib_mysqludf_sys_64.so"
       - "./add_plugin.sql:/docker-entrypoint-initdb.d/3_add_plugin.sql"
     ports:
-      - "127.0.0.1:3306:3306"
+      - "3306:3306"
     command:
       - bash
       - -c
@@ -22,13 +26,19 @@ services:
         ./entrypoint.sh mysqld
   applicationservice:
     image: lendoab:application-service
+    networks:
+      - mynetwork
     ports:
       - "8081:8081"
   jobervice:
     image: lendoab:job-service
+    networks:
+      - mynetwork
     ports:
       - "8082:8082"
   interviewservice:
     image:  lendoab/interview-service:stable
+    networks:
+      - mynetwork
     ports:
     - "8000:8000"
